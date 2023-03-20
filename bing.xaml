@@ -1,0 +1,141 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="bing" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="mBody" Type="InArgument(x:String)" />
+    <x:Property Name="ExtractDataTable" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1410.4,1190.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>bing_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="bing" sap:VirtualizedContainerService.HintSize="545.6,1125.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;in 'bing'&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Bing" sap:VirtualizedContainerService.HintSize="483.2,748" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="006d73a0-60d9-44b9-808c-0bd797353b5e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,531.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TEXTAREA sb_form_q'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="006d73a0-60d9-44b9-808c-0bd797353b5e" Text="[mBody + &quot;[k(enter)]&quot;]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.bing.com/" DesignTimeRectangle="646, 337, 580, 28" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'TEXTAREA sb_form_q'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='TEXTAREA' type='search' class='sb_form_q sb_form_ta' aaname='' /&gt;" Guid="8d4461c1-9b3c-4702-bd16-2df0bc69093f" ImageBase64="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" InformativeScreenshot="6b4b06526fa43f70ec4317eb82440699.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bing' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='bHeaderBing' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='bBodyBing' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='0' name='Column1' attr='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" Version="V3">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="209, 331, 810, 2999" DesignTimeScaleFactor="1.25" FriendlyName="'Deneme -'" FullSelectorArgument="&lt;webctrl id='b_results' tag='OL' /&gt;" Guid="5671c89f-4302-49cf-b442-05f54097bf88" InformativeScreenshot="f6582ee86fb7e8248d48f2f195897434.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='deneme - Search' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE1SURBVFhH7ZXrccMgEIRVAiW4FDcU5A6SDqwOlEIiUYLcgUux99AqgF5BmMkf883c2HN3HMvxUFUoFGJRF3NW+qdRur/DHrRB1V2L2Ilp+UFxpWpz9SZdt7q7Si6H5cFOrrvb6oTrNmQVsVj5R28wwXmaxP7X/XeQg07Ywa+C4qegsO6+GFogsSAXwhhKBwfOraw2Ld2b2O44EQ3d6aDI8FswYkXcjknAne50vGIPunaBABzYY2N28YtJcbp38cfQlQ6KuAfn+BYMdKeDIvLqjQVxwOje5Oih/ZPZimDmk6EFEgtycz3NKOa6IDa++3Y78KusyPD6RXUrGjuJfx2jbbtbh6GIsBNrNu9EThEChMjTLAfN74jclEa2wubMn+TcImIoIibmIuj+X5yI7U95ofDuVNUToEN3Uyyxs3sAAAAASUVORK5CYII=" InformativeScreenshot="ceff2949a5faf342df5542ef4133d5cb.jpg" Selector="&lt;html app='chrome.exe' title='Bing' /&gt;" Title="Bing" Url="https://www.bing.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;out 'bing'&quot;]" />
+  </Sequence>
+</Activity>
